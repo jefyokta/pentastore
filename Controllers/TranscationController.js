@@ -206,6 +206,14 @@ TransactionC.post('/notifhandler', async (req, res) => {
             const ada = await selectbyid(order_id);
             if (ada.length > 0) {
                 if (status_code == 200) {
+                    const user = await orderOwner(order_id)
+                    const userdetails = await FindById(user.user)
+                    const produts = await GetproductById(user.idproduk)
+                    // console.log(userdetails)
+                    const pesan = ` Hi ${userdetails.nama}, pesanan produk ${produts.product} anda dengan id ${id} telah berhasil dicapture. Ayo cek order List Anda`
+                    console.log(r)
+                    await notif.sendNotif(user.user, pesan, 'test', id);
+
                     const result = await updateOrder(order_id);
                     res.status(200).json(status_code);
                 }
