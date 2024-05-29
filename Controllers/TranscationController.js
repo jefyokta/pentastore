@@ -2,9 +2,11 @@ const { default: axios } = require('axios');
 const express = require('express');
 const TransactionC = express.Router();
 const fetch = require('node-fetch')
-const { updateOrder, userOrder, insertOrder, orderOwner, userOrderv2, getOrder } = require('../Models/orderModel')
+const { updateOrder, userOrder, insertOrder, orderOwner, userOrderv2, getOrder, selectbyid } = require('../Models/orderModel')
 const { v4: uuidv4 } = require('uuid');
 const { tokenVer } = require('../middleware/tokenVer');
+const crypto = require('crypto')
+hash = crypto.createHash('sha512')
 
 const notif = require('../Models/notifModel');
 const { FindById } = require('../Models/userModel');
@@ -188,7 +190,39 @@ TransactionC.get('/order', async (req, res) => {
     res.status(200).json(result)
 
 })
+TransactionC.post('/notifhandler', async (req, res) => {
+    const data = req.body;
+    if (!req.body) {
+        return res.status(400).json({ error: 'Bad request: No data received' });
+    }
+    const { order_id, status_code, gross_amount, signature_key } = data;
+    const sign = order_id + status_code + gross_amount + process.env.MIDTRANSKEY
+    const shouldbesign = hash.update(sign).digest('hex')
+    console.log(data)
 
+    if (shouldbesign == signature_key) {
+        try {
+
+            const ada = await selectbyid(order_id);
+            if (ada.length > 0) {
+                if (status_code == 200) {
+                    const result = await updateOrder(order_id);
+                }
+                return res.status(200).json(status_code);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            return res.status(500).json({ error: 'Internal server error' });
+        }
+
+
+    }
+    else {
+        res.status(401).json('unauthorize')
+    }
+
+
+})
 
 
 module.exports = TransactionC

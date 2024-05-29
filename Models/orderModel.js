@@ -69,12 +69,18 @@ const getOrder =async(userid)=>{
    console.log(row)
    return row
 }
+
+const selectbyid =async(id)=>{
+    const row = await db.query(`SELECT * FROM pesanan WHERE id = ?`,[id])
+    return row
+}
 module.exports = {
     updateOrder,
     userOrder,
     insertOrder,
     orderOwner,
     userOrderv2,
-    getOrder
+    getOrder,
+    selectbyid
 
 }
