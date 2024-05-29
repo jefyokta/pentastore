@@ -197,8 +197,8 @@ TransactionC.post('/notifhandler', async (req, res) => {
     }
     const { order_id, status_code, gross_amount, signature_key } = data;
     const sign = order_id + status_code + gross_amount + process.env.MIDTRANS_SERVER_KEY
-    const shouldbesign = hash.update(sign).digest('hex')
-    console.log(data)
+    hash.update(sign)
+    const shouldbesign = hash.digest('hex')
 
     if (shouldbesign == signature_key) {
         try {
@@ -213,7 +213,7 @@ TransactionC.post('/notifhandler', async (req, res) => {
             }
         } catch (error) {
             console.error('Error:', error);
-          res.status(500).json({ error: 'Internal server error' });
+            res.status(500).json({ error: 'Internal server error' });
         }
 
 
