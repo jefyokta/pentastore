@@ -26,7 +26,7 @@ const corsOptions = {
 };
 
 // app.use(cors(corsOptions));
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 
 // Set the views directory
 app.set('views', path.join(__dirname, 'views'));
