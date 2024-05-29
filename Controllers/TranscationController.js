@@ -207,12 +207,13 @@ TransactionC.post('/notifhandler', async (req, res) => {
             if (ada.length > 0) {
                 if (status_code == 200) {
                     const result = await updateOrder(order_id);
+                    res.status(200).json(status_code);
                 }
-                return res.status(200).json(status_code);
+                res.status(200).json(status_code);
             }
         } catch (error) {
             console.error('Error:', error);
-            return res.status(500).json({ error: 'Internal server error' });
+          res.status(500).json({ error: 'Internal server error' });
         }
 
 
