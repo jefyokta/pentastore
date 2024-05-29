@@ -26,6 +26,10 @@ const corsOptions = {
 };
 
 // app.use(cors(corsOptions));
+app.set('view engine', 'pug');
+
+// Set the views directory
+app.set('views', path.join(__dirname, 'views'));
 app.use(cookieParser())
 app.use(bodyParser.json())
 // app.use(morgan('combined', { stream: accessLogStream }));
