@@ -2,9 +2,8 @@ const express = require('express');
 const app = express();
 const fs = require('fs')
 const router = require('./routes/routes')
-const cors = require('cors');
 const path = require('path')
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser')
 
@@ -18,7 +17,7 @@ const port = 3000;
 //   cert: fs.readFileSync('./cert/api.penta.store.crt')
 // }
 
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
+// const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
 const corsOptions = {
   credential: true,
   origin: 'http://localhost:8081',
@@ -29,7 +28,7 @@ const corsOptions = {
 // app.use(cors(corsOptions));
 app.use(cookieParser())
 app.use(bodyParser.json())
-app.use(morgan('combined', { stream: accessLogStream }));
+// app.use(morgan('combined', { stream: accessLogStream }));
 app.use(router)
 
 // const server =  https.createServer(options,app)
