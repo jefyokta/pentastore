@@ -196,7 +196,7 @@ TransactionC.post('/notifhandler', async (req, res) => {
         return res.status(400).json({ error: 'Bad request: No data received' });
     }
     const { order_id, status_code, gross_amount, signature_key } = data;
-    const sign = order_id + status_code + gross_amount + process.env.MIDTRANSKEY
+    const sign = order_id + status_code + gross_amount + process.env.MIDTRANS_SERVER_KEY
     const shouldbesign = hash.update(sign).digest('hex')
     console.log(data)
 
