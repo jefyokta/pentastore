@@ -27,6 +27,7 @@ router.get("/img", async (req, res) => {
     res.sendFile(pathfile)
 
 });
+router.get('/docs',(req,res)=>res.render('docs'))
 // router.get('/testmail',(req,res)=>{
 //     const mail = new Mail('jefyokta50@gmail.com','test','test daripenta')
 //     mail.sendMail()
