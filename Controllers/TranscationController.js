@@ -6,7 +6,7 @@ const { updateOrder, userOrder, insertOrder, orderOwner, userOrderv2, getOrder, 
 const { v4: uuidv4 } = require('uuid');
 const { tokenVer } = require('../middleware/tokenVer');
 const crypto = require('crypto')
-hash = crypto.createHash('sha512')
+const hash = crypto.createHash('sha512')
 
 const notif = require('../Models/notifModel');
 const { FindById } = require('../Models/userModel');
