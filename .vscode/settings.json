@@ -1,0 +1,7 @@
+{
+    "editor.cursorBlinking": "expand",
+    "editor.fontFamily": "Hack,Menlo, Monaco, 'Courier New', monospace",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+}

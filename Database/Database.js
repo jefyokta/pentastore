@@ -15,11 +15,30 @@ class Database{
             throw error;
         }
     }
+    async selectAll(tbname, limit = 5) {
+        try {
+            let limit1;
 
-    async selectAll(tbname , limit = 5){
-       return this.query(`SELECT * FROM ${tbname} LIMIT ${limit}`)
+            if (limit === null) {
+                limit1 = 5
+            }
+            else{
+                limit1 = limit;
+            }
+        
+          const queryResult = await this.query(`SELECT * FROM ${tbname} LIMIT ${limit1}`);
+          return queryResult;
+        } catch (error) {
+          console.error("Error in selectAll method:", error);
+          throw error;
+        }
+      }
 
-    }
+      async selectByid(tb,id){
+        const query = await this.query(`SELECT * FROM ${tb} WHERE id = ?`,[id])
+        return query
+      }
+      
 
 
 
@@ -29,16 +48,6 @@ class Database{
        await this.pool.end();
     }
 }
-
-// const config =  {
-//     host: 'localhost',
-//     user :  'root',
-//     password : 'root',
-//     database : 'pentastore2',
-//     port : 8889
-
-// }
-
 const dbHost = process.env.DB_HOST;
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASSWORD;
