@@ -1,12 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Docs pentastore's API</title>
-</head>
-<body>
-    <h1>Docs</h1>
-    
-</body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Api Reference</h1>
+    </div>
+    <div class="container">
+      <div class="bg-light p-5 text-dark rounded-3">
+        <h3 class="text-info">GET /</h3>
+        <hr />
+        <p>response:</p>
+        <p>{"msg":"gaskennn"}</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="bg-light p-5 text-dark rounded-3">
+        <h4 class="text-info">GET /product</h4>
+        <hr />
+        <div class="mb-5">
+            <div class="container">
+              <b>
+                <h4>GET /</h4>
+              </b>
+
+              <p>params:</p>
+              <h5>limit (optional)</h5>
+              by default if dont put limit params, it will be 20
+              <p>response :</p>
+              <div class="bg-dark rounded-2 p-5" style="max-width: 60vh">
+                <code lang="php" title="json"
+                  >[ <br />
+                  { <br />
+                  "id":"productid",<br />
+                  "product":"productaname",<br />
+                  "harga":"productprice",<br />
+                  "desc":"productdesc",<br />
+                  "tech":"producttech",<br />
+                  "ordered":"numproductordered",<br />
+                  "star":"productstar" <br />
+                  },<br />
+                  {....} <br />
+                  ]</code
+                >
+          </div>
+          </div>
+        </div>
+        <div class="mb-5">
+            <div class="container">
+              <b>
+                <h4>GET /:categories</h4>
+              </b>
+
+              <p>categories:</p>
+              <h5>popular</h5>
+              <h5>newest</h5>
+              will shor product by choosen categories
+              <p>response :</p>
+              <div class="bg-dark rounded-2 p-5" style="max-width: 60vh">
+                <code lang="php" title="json"
+                  >[ <br />
+                  { <br />
+                  "id":"productid",<br />
+                  "product":"productaname",<br />
+                  "harga":"productprice",<br />
+                  "desc":"productdesc",<br />
+                  "tech":"producttech",<br />
+                  "ordered":"numproductordered",<br />
+                  "star":"productstar" <br />
+                  },<br />
+                  {....} <br />
+                  ]</code
+                >
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+  </body>
 </html>

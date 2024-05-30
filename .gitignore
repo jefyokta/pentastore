@@ -7,3 +7,7 @@ index.html
 bun.lockb
 .DS_Store
 cert/
+*.crt 
+*.key
+*.pem
+*.csr
