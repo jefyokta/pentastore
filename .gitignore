@@ -6,3 +6,4 @@ access.log
 index.html
 bun.lockb
 .DS_Store
+cert/
