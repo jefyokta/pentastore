@@ -27,7 +27,7 @@ const updateOrder = async (orderid) => {
 
 const userOrder = async (userid, option = null) => {
     try {
-        console.log('option :'+option)
+        console.log('option :' + option)
         const query = option == null || option == '' ? await db.query(`SELECT pesanan.* ,product.harga,product.gambar,product.tech,product.product,product.link FROM pesanan INNER JOIN product ON pesanan.idproduk = product.id WHERE pesanan.user = ?`, [userid]) : await db.query(`SELECT pesanan.* ,product.harga,product.gambar,product.tech,product.product,product.link FROM pesanan INNER JOIN product ON pesanan.idproduk = product.id WHERE pesanan.user = ? AND status = ?`, [userid, option])
 
         console.log(query)
@@ -42,7 +42,7 @@ const userOrder = async (userid, option = null) => {
 const insertOrder = async (data) => {
     try {
         const product = data.details
-        await db.query('INSERT INTO `pesanan`(`id`, `idproduk`, `qty`, `total`, `token`, `user`) VALUES (?,?,?,?,?,?)', [data.id, product.id, 1, product.harga, product.token, product.userid])
+        await db.query('INSERT INTO `pesanan`(`id`, `idproduk`, `qty`, `total`, `token`, `user`,`tanggalpembelian`) VALUES (?,?,?,?,?,?,NOW())', [data.id, product.id, 1, product.harga, product.token, product.userid])
     } catch (error) {
         console.log(error)
         return false
@@ -60,18 +60,18 @@ const orderOwner = async (orderid) => {
 
     }
 }
-const userOrderv2 =async(userid)=>{
-   const row = await db.query(`SELECT pesanan.* ,product.harga,product.gambar,product.tech,product.product,product.link FROM pesanan INNER JOIN product ON pesanan.idproduk = product.id WHERE pesanan.user = ?`, [userid])
-   return row
+const userOrderv2 = async (userid) => {
+    const row = await db.query(`SELECT pesanan.* ,product.harga,product.gambar,product.tech,product.product,product.link FROM pesanan INNER JOIN product ON pesanan.idproduk = product.id WHERE pesanan.user = ?`, [userid])
+    return row
 }
-const getOrder =async(userid)=>{
-   const [row] = await db.query(`SELECT pesanan.* ,product.harga,product.gambar,product.tech,product.product,product.link FROM pesanan INNER JOIN product ON pesanan.idproduk = product.id WHERE pesanan.id = ?`, [userid])
-   console.log(row)
-   return row
+const getOrder = async (userid) => {
+    const [row] = await db.query(`SELECT pesanan.* ,product.harga,product.gambar,product.tech,product.product,product.link FROM pesanan INNER JOIN product ON pesanan.idproduk = product.id WHERE pesanan.id = ?`, [userid])
+    console.log(row)
+    return row
 }
 
-const selectbyid =async(id)=>{
-    const row = await db.query(`SELECT * FROM pesanan WHERE id = ?`,[id])
+const selectbyid = async (id) => {
+    const row = await db.query(`SELECT * FROM pesanan WHERE id = ?`, [id])
     return row
 }
 module.exports = {

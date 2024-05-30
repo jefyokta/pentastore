@@ -25,7 +25,7 @@ const Register = async (user) => {
     else {
         try {
             const rows = await db.query(
-                `INSERT INTO ${table} (username, email, password , nama) VALUES (?, ?, ?, ?)`,
+                `INSERT INTO ${table} (username, email, password , nama ,createat) VALUES (?, ?, ?, ? ,NOW())`,
                 [user1, em, pw, nm]
             );
 
