@@ -27,60 +27,61 @@
         <h4 class="text-info">GET /product</h4>
         <hr />
         <div class="mb-5">
-            <div class="container">
-              <b>
-                <h4>GET /</h4>
-              </b>
+          <div class="container">
+            <b>
+              <h4>GET /</h4>
+            </b>
 
-              <p>params:</p>
-              <h5>limit (optional)</h5>
-              by default if dont put limit params, it will be 20
-              <p>response :</p>
-              <div class="bg-dark rounded-2 p-5" style="max-width: 60vh">
-                <code lang="php" title="json"
-                  >[ <br />
-                  { <br />
-                  "id":"productid",<br />
-                  "product":"productaname",<br />
-                  "harga":"productprice",<br />
-                  "desc":"productdesc",<br />
-                  "tech":"producttech",<br />
-                  "ordered":"numproductordered",<br />
-                  "star":"productstar" <br />
-                  },<br />
-                  {....} <br />
-                  ]</code
-                >
-          </div>
+            <p>params:</p>
+            <h5>limit (optional)</h5>
+            by default if dont put limit params, it will be 20
+            <p>response :</p>
+            <div class="bg-dark rounded-2 p-5" style="max-width: 60vh">
+              <code lang="php" title="json"
+                >[ <br />
+                { <br />
+                "id":"productid",<br />
+                "product":"productaname",<br />
+                "harga":"productprice",<br />
+                "desc":"productdesc",<br />
+                "tech":"producttech",<br />
+                "ordered":"numproductordered",<br />
+                "star":"productstar" <br />
+                },<br />
+                {....} <br />
+                ]</code
+              >
+            </div>
           </div>
         </div>
         <div class="mb-5">
-            <div class="container">
-              <b>
-                <h4>GET /:categories</h4>
-              </b>
+          <div class="container">
+            <b>
+              <h4>GET /:categories</h4>
+            </b>
 
-              <p>categories:</p>
-              <h5>popular</h5>
-              <h5>newest</h5>
-              will shor product by choosen categories
-              <p>response :</p>
-              <div class="bg-dark rounded-2 p-5" style="max-width: 60vh">
-                <code lang="php" title="json"
-                  >[ <br />
-                  { <br />
-                  "id":"productid",<br />
-                  "product":"productaname",<br />
-                  "harga":"productprice",<br />
-                  "desc":"productdesc",<br />
-                  "tech":"producttech",<br />
-                  "ordered":"numproductordered",<br />
-                  "star":"productstar" <br />
-                  },<br />
-                  {....} <br />
-                  ]</code
-                >
-          </div>
+            <p>categories:</p>
+            <h5>popular</h5>
+            <h5>newest</h5>
+            will shor product by choosen categories
+            <p>response :</p>
+            <div class="bg-dark rounded-2 p-5" style="max-width: 60vh">
+              <code lang="php" title="json" style="white-space: pre !important"
+                >[ <br />
+                { <br />
+
+                    "id":"productid",<br />
+                    "product":"productaname",<br />
+                    "harga":"productprice",<br />
+                    "desc":"productdesc",<br />
+                    "tech":"producttech",<br />
+                    "ordered":"numproductordered",<br />
+                    "star":"productstar" <br />
+                },<br />
+                {....} <br />
+                ]</code
+              >
+            </div>
           </div>
         </div>
       </div>
