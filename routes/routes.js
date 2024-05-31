@@ -28,7 +28,8 @@ router.get("/img", async (req, res) => {
 
 });
 router.get('/test', (req, res) => {
-    res.render('test', data = req.headers)
+    const data = [req.headers,req.ips]
+    res.render('test', data )
     console.log(req.socket.remoteAddress)
     console.log(req.ips)
 })
