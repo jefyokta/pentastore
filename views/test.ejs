@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <% const arr = data %>
-    <p>Your device : 
-
-        <%=  arr[0]['user-agent']%>
-        <%= arr[1].length>0 ? arr[1][0] :'null' %>
-    </p>
-
-   
-</body>
+    <p>Your device : <%= arr[0]['user-agent']%></p>
+    <p>your ip : <%= arr[1].length>0 ? arr[1][0] :'null' %></p>
+    <p>ip <%= arr[2].ip %></p>
+    <p>country <%= arr[2].country %></p>
+    <p>region <%= arr[2].region %></p>
+    <p>city <%= arr[2].city %></p>
+    <p>provider <%= arr[2].org %></p>
+    <p>loc <%= arr[2].loc %></p>
+  </body>
 </html>
