@@ -26,6 +26,7 @@ const corsOptions = {
 };
 
 // app.use(cors(corsOptions));
+app.set('trust proxy',true);
 app.set('view engine', 'ejs');
 
 // Set the views directory

@@ -27,15 +27,12 @@ router.get("/img", async (req, res) => {
     res.sendFile(pathfile)
 
 });
-router.get('/test', (req, res) => {res.render('test', data = req.headers )
-   console.log(req.socket.remoteAddress)
+router.get('/test', (req, res) => {
+    res.render('test', data = req.headers)
+    console.log(req.socket.remoteAddress)
+    console.log(req.ips)
 })
 router.get('/docs', (req, res) => res.render('docs'))
-// router.get('/testmail',(req,res)=>{
-//     const mail = new Mail('jefyokta50@gmail.com','test','test daripenta')
-//     mail.sendMail()
-//     res.status(200).json('ok')
 
-// })
 
 module.exports = router;
