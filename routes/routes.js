@@ -14,7 +14,7 @@ const ratec = require("../Controllers/RateController");
 router.use(express.json());
 router.get("/", (req, res) => res.json({ msg: "Gaskennnn" }));
 router.get("/token", refreshtoken);
-router.get('/error',(req,res)=>res.status(req.query.error || 500).json(`err ${req.query.error || 500}`))
+router.get('/error', (req, res) => res.status(req.query.error || 500).json(`err ${req.query.error || 500}`))
 router.use("/user", UserC);
 router.use("/product", ProC);
 router.use("/transaction", TransactionC);
@@ -27,7 +27,12 @@ router.get("/img", async (req, res) => {
     res.sendFile(pathfile)
 
 });
-router.get('/docs',(req,res)=>res.render('docs'))
+router.get('/test', (req, res) => {res.render('test', data = req.headers )
+    console.log(req.connection.remoteAddress)
+    console.log(req.headers['from'])
+    console.log(typeof req.headers['connection'])
+})
+router.get('/docs', (req, res) => res.render('docs'))
 // router.get('/testmail',(req,res)=>{
 //     const mail = new Mail('jefyokta50@gmail.com','test','test daripenta')
 //     mail.sendMail()

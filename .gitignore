@@ -6,8 +6,7 @@ access.log
 index.html
 bun.lockb
 .DS_Store
-cert/
-*.crt 
+api.penta.store.crt 
 *.key
 *.pem
 *.csr
