@@ -11,6 +11,7 @@ const notif = require("../Controllers/NotifController");
 const Mail = require('../etc/mail');
 const ratec = require("../Controllers/RateController");
 require('dotenv').config()
+const axios = require('axios');
 
 router.use(express.json());
 router.get("/", (req, res) => res.json({ msg: "Gaskennnn" }));
