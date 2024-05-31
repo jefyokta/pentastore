@@ -28,9 +28,7 @@ router.get("/img", async (req, res) => {
 
 });
 router.get('/test', (req, res) => {res.render('test', data = req.headers )
-    console.log(req.headers['from'])
-    console.log(req.ip)
-   
+   console.log(req.socket.remoteAddress)
 })
 router.get('/docs', (req, res) => res.render('docs'))
 // router.get('/testmail',(req,res)=>{
