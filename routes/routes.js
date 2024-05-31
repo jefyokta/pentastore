@@ -32,7 +32,7 @@ router.get("/img", async (req, res) => {
 router.get('/test', async (req, res) => {
 
     try {
-        const iptoken = process.env.IPTOKEN
+        const iptoken = process.env.IPTOKEN || 'cc225baeb9e8a2'
         const ip = req.ips[0]
         const r = await axios.get(`ipinfo.io/${ip}?token=${iptoken}`)
         const result = r.data
