@@ -34,7 +34,7 @@ router.get('/test', async (req, res) => {
     try {
         const iptoken = process.env.IPTOKEN || 'cc225baeb9e8a2'
         const ip = req.ips[0]
-        const r = await axios.get(`ipinfo.io/${ip}?token=${iptoken}`)
+        const r = await axios.get(`https://ipinfo.io/${ip}?token=${iptoken}`)
         const result = r.data
         const d = [req.headers, req.ips , result]
         console.log(d)
