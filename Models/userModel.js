@@ -454,10 +454,10 @@ const cekprodukowned = async (username, id) => {
     console.log(r)
     if (r.length == 0) return { msg: "you even not an user of penta store" }
     const userid = r[0].id
-    if (userid == 5) return { msg: "hei jefy pls complete this shit" }
+    // if (userid == 5) return { msg: "hei jefy pls complete this shit", status: true }
     const [result] = await db.query("SELECT * FROM pesanan WHERE user =? AND idproduk= ?", [userid, id])
     if (!result) return { msg: "poor guy,even  you've bought nothing" }
-    if (result.status == "1") return { msg: "you own this app, please wait developers complete thiss app to use it" }
+    if (result.status == "1") return { msg: "you own this app, please wait developers complete thiss app to use it", status: true }
     return { msg: "You dont have this app, Buy it now in pentastore" }
 }
 const ChangeDefaultFoto = async (gambar, refreshtoken) => {

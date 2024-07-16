@@ -10,3 +10,4 @@ api.penta.store.crt
 *.key
 *.pem
 *.csr
+androsettings.txt

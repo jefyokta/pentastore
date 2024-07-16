@@ -52,6 +52,29 @@ userc.post('/login', async (req, res, next) => {
 
     }
 })
+userc.post('/app', async (req, res) => {
+    try {
+        const user = req.body
+        console.log(req.body)
+        if (!user.username) return res.status(402).json('required user details')
+        console.log(user)
+        const r = await cekprodukowned(user.username, user.productid)
+        if (r.status) {
+            const result = await Login(user)
+            if (!result.accesstoken) res.status(401)
+            res.json({ accesstoken: result.accesstoken })
+
+        }
+        else {
+            res.status(401).json({ msg: 'pls buy this app in pentastore first' })
+
+        }
+
+    } catch (error) {
+        console.log(error)
+        res.status(500)
+    }
+})
 
 userc.post('/register', async (req, res) => {
     try {
