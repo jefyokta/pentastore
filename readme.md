@@ -1,8 +1,8 @@
 ## Production Realease for this project has database issue, please run locally 
 
-```sh git clone https://github.com/jefyokta/pentastore.git ```
-```sh cd path/to/projects ```
-```sh npm install ```
+``` git clone https://github.com/jefyokta/pentastore.git ```  
+```cd path/to/projects ```  
+```npm install ```  
 
 
 ## Env Variables
