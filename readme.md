@@ -1,8 +1,18 @@
 ## Production Realease for this project has database issue, please run locally 
-
+ Clone 
 ``` git clone https://github.com/jefyokta/pentastore.git ```  
+
+Move to this project directory
 ```cd path/to/projects ```  
-```npm install ```  
+
+
+
+Install Packages
+    ``` npm install ```
+
+Start
+*<b>edit start's script and remove sudo in file package.json if you using windows</b>*
+``` npm start ```
 
 
 ## Env Variables
@@ -21,5 +31,5 @@ IPTOKEN =
 ## Api Documentation (uncomplete)
 https://pentastore.vercel.app/docs
 
-## you could use https in locally with my CA in dir /cert. host *.penta.store
+<i>you could use https in locally with my CA in dir /cert. host *.penta.store </i>
 
