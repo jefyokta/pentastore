@@ -1,5 +1,6 @@
-## Production Realease for this project has database issue, please run locally 
- Clone 
+## Production Realease for this project has database issue, please run locally !
+
+ Clone  project
 ``` 
 git clone https://github.com/jefyokta/pentastore.git 
 ```  
@@ -21,6 +22,7 @@ Start
 ``` 
 npm start 
 ```
+
 
 
 ## Env Variables
