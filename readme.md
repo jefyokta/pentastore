@@ -17,7 +17,7 @@ Install Packages
  npm install 
 ```
 
-Start
+Start<br>
 *<b>edit start's script and remove sudo in file package.json if you using windows</b>*
 ``` 
 npm start 
