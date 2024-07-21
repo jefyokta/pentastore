@@ -1,24 +1,27 @@
-## Production Realease for this project has database issue, please run locally !
+## How To Start
+this project has been deployed in https://pentastore.vercel.app
 
- Clone  project
+Or you could clone this project
+
+### Clone  project
 ``` 
 git clone https://github.com/jefyokta/pentastore.git 
 ```  
 
-Move to this project directory
+### Move to this project directory
 ```
-cd path/to/projects 
+cd path/to/project 
 ```  
 
 
 
-Install Packages
+### Install Packages
 ```
  npm install 
 ```
 
-Start<br>
-*<b>edit start's script and remove sudo in file package.json if you using windows</b>*
+### Start<br>
+*edit start's script and remove sudo in file package.json if you using windows*
 ``` 
 npm start 
 ```
