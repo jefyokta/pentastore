@@ -11,16 +11,22 @@ proc.get('/', async (req, res) => {
 
     const intlimit = parseInt(req.query.limit)
     let limit
-    if (!intlimit || intlimit === 'NaN') {
-      limit = 20;
+    const id = req.query.id;
+    if (id) {
+      const result = await GetproductById(id)
+      res.json(result)
     }
     else {
-      limit = intlimit
+      if (!intlimit || intlimit === 'NaN') {
+        limit = 20;
+      }
+      else {
+        limit = intlimit
+      }
+      const hasil = Getproduct(limit).then(re => res.json(re))
     }
 
 
-
-    const hasil = Getproduct(limit).then(re => res.json(re))
   } catch (error) {
     res.status(500)
   }
@@ -70,6 +76,7 @@ proc.get('/get', async (req, res) => {
   try {
     const id = req.query.id
     const result = await GetproductById(id)
+    result.info = "We have new endpoint for this. /product?id={id}"
     res.json(result)
   } catch (error) {
     res.status(500)
