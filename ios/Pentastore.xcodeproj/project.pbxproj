@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* PentastoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PentastoreTests.m */; };
-		0407434B2BF3EC9E00A7C263 /* PentastoreTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 00E356EE1AD99517003FC87E /* PentastoreTests.xctest */; };
-		042405502BF25A8C0068F6D8 /* Pentastore.app in Resources */ = {isa = PBXBuildFile; fileRef = 13B07F961A680F5B00A75B9A /* Pentastore.app */; };
 		04F68D1B2BF3DE2700F111A2 /* Pods-Pentastore.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5709B34CF0A7D63546082F79 /* Pods-Pentastore.release.xcconfig */; };
 		04F68D1C2BF3DE2800F111A2 /* Pods-Pentastore.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5709B34CF0A7D63546082F79 /* Pods-Pentastore.release.xcconfig */; };
 		056ADB337F6FAF91A88C8D63 /* libPods-Pentastore-PentastoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E59704A2320963140C71894E /* libPods-Pentastore-PentastoreTests.a */; };
@@ -21,19 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+		04B4A6612BFA7908008F5A22 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = Pentastore;
-		};
-		040743472BF3EB5300A7C263 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 00E356ED1AD99517003FC87E;
-			remoteInfo = PentastoreTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -176,7 +167,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				00E356F51AD99517003FC87E /* PBXTargetDependency */,
+				04B4A6622BFA7908008F5A22 /* PBXTargetDependency */,
 			);
 			name = PentastoreTests;
 			productName = PentastoreTests;
@@ -198,7 +189,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				040743482BF3EB5300A7C263 /* PBXTargetDependency */,
 			);
 			name = Pentastore;
 			productName = Pentastore;
@@ -258,8 +248,6 @@
 				04F68D1B2BF3DE2700F111A2 /* Pods-Pentastore.release.xcconfig in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				042405502BF25A8C0068F6D8 /* Pentastore.app in Resources */,
-				0407434B2BF3EC9E00A7C263 /* PentastoreTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +311,7 @@
 		};
 		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -417,15 +405,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+		04B4A6622BFA7908008F5A22 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* Pentastore */;
-			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
-		};
-		040743482BF3EB5300A7C263 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 00E356ED1AD99517003FC87E /* PentastoreTests */;
-			targetProxy = 040743472BF3EB5300A7C263 /* PBXContainerItemProxy */;
+			targetProxy = 04B4A6612BFA7908008F5A22 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -490,6 +473,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Pentastore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -517,6 +501,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Pentastore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
